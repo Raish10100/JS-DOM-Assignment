@@ -1,0 +1,52 @@
+<!-- You are tasked to create form validation using js DOM. Ensure that the username must be at least 3 characters long, and the password must
+be at least 8 characters long.On form submission,display and alert stating "From Validation successful" if the conditions are met,otherwise,show "Form
+Validation failed."Remember,on form submission,the webpage must not be reloaded. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+</head>
+<body>
+    <div class="continer" style="width: 400px;height: 300px; background-color: #a02626; display: flex;flex-direction: column; justify-content: center; align-items: center;margin: auto;" >
+       <div>
+            <h1>Sign Up Form</h1>
+            <Label>Name:</Label><input id="name" type="text" placeholder="(Minimum 3 characters)">
+        </div>
+        <br>
+        <div>
+            <Label>Email:</Label><input id="email" type="email" placeholder="Enter Your Email">
+        </div>
+        <br>
+
+        <div>
+            <Label>password:</Label><input id="password" type="password" placeholder="(Minimum 8 characters)">
+        </div>
+        <br>
+        <br>
+        <button id="submitBtn" onclick="checkCondisions()">Submit</button>
+    </div>
+
+
+
+    <script>
+
+        const name = document.getElementById('name') 
+        const email = document.getElementById('email')
+        const password = document.getElementById('password') 
+        const submitBtn = document.getElementById('submitBtn')
+
+        function checkCondisions(){
+           if (name.value.length >= 3 && password.value.length >= 8) {
+               alert("Form Validation Successfully")
+               
+            } else {
+            alert("Form Validation Failed !!")
+           }
+        }
+
+    </script>
+</body>
+</html>

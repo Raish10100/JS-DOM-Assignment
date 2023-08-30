@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <style>
+    body {
+      display:flex  ;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      background-color: #100e0e;
+      height: 100vh;
+      color: #fff;
+      flex-direction: column;
+    }
+
+    .container {
+      padding: 30px;
+      border-radius: 20px;
+      border: 5px solid #fff;
+    }
+    
+     
+  </style>
+</head>
+<body>
+  
+  <div class="container" >
+    <span id="hours">00</span> : 
+    <span id="minutes">00</span> :
+    <span id="seconds">00</span>
+  </div>
+  <br>
+  <div>
+  <span>Colorcode : </span>
+  <span id="colorcodetry"></span>
+</div>
+  <script>
+    function updateTime(){
+const container = document.getElementsByClassName("container");
+const currentTime = new Date();
+const timeinhour = currentTime.getHours().toString().padStart(2,"0");
+const timeinminute = currentTime.getMinutes().toString().padStart(2,"0");
+const timeinsecond = currentTime.getSeconds().toString().padStart(2,"0");
+
+const hours = document.getElementById("hours").innerText = timeinhour
+const minutes = document.getElementById("minutes").innerText = timeinminute;
+const seconds = document.getElementById("seconds").innerText = timeinsecond;
+
+const colorcode = "#" + timeinhour + timeinminute + timeinsecond;
+
+const colorcodetry = document.getElementById("colorcodetry").innerText = colorcode;
+
+document.body.style.backgroundColor = colorcode;
+}
+
+setInterval(updateTime ,1000)
+
+</script>
+</body>
+</html>

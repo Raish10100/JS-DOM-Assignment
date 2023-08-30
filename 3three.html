@@ -1,0 +1,35 @@
+<!-- You are tasked with building a simple web counter that diaplays two buttons:"+" and "-".When the user click the "+" button,the counter should
+increment by one ,and when the user clicks the "-" button, the counter should decrement by one.If the counter goes below zero,you must notify the user throught an alert. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <button id="addition" onclick="add()">+</button>
+    <span id="result" style="font-size: 25px;">0</span>
+    <button id="subtraction" onclick="substract()">-</button>
+
+    <script>
+
+        const addition = document.getElementById('add')
+        const subtract = document.getElementById('subtract')
+        const result = document.getElementById('result')
+       function add(){
+        result.innerHTML = Number(result.innerHTML) + 1;
+       }
+       function substract(){
+        if(result.innerHTML > 0){
+            result.innerHTML = Number(result.innerHTML) - 1;
+        }
+        else{
+            alert("Counter is going beyond 0.")
+        }
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- Your client needs a feature to upload a profile picture on their wibsite.Your task is to create an "input type=filr" element that allows users to select images.Once an image is uploaded,
+display a preview of the selected image below the file input.You are required to achieve this using javaScript DOM manipulation. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Up</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <h1>Update Profile Picture</h1>
+    <input type="file" id="pictureFetcher" onchange="changeProfilePicture()">
+    <h2>Your Profile Picture</h2>
+    <img src="" alt="No Profile Picture" id="img">
+
+
+    <script>
+        const pictureFetcher = document.getElementById("pictureFetcher");
+        const img = document.getElementById("img");
+  
+        function changeProfilePicture() {
+          const reader = new FileReader();
+  
+          reader.onload = function (e) {
+            img.src = e.target.result;
+          };
+  
+          reader.readAsDataURL(pictureFetcher.files[0]);
+        }
+      </script>
+</body>
+</html>
